@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Auto-Refresh Iframes</title>
+    <style type="text/css">
+        h1 {
+            font-size: 30px;
+            background-color: #000000;
+            color: #ffffff;
+            padding: 8px 14px;
+        }
+        ol {
+            border: 2px solid #F3F3F3;
+            padding: 14px 14px 14px 32px;
+        }
+        .iframe-container {
+            display: flex;
+            justify-content: space-between; /* This will add space between the iframes */
+        }
+        .iframe2-container {
+            grid-template-columns: 45% 27% 27%; /* Adjusts for three columns where the first is wider */
+            column-gap: 10%; /* Smaller gap for the narrower columns */
+            align-items: start; /* Aligns iframes to the top of the container */
+            margin-left:100px;
+        }
+        iframe {
+            width: 100%; /* Adjusts the width of each iframe to fit half of the container width */
+            height: 380px; /* Set the height of the iframe */
+            border: none; /* Removes the border around the iframe */
+
+        }
+    </style>
+    <script type="text/javascript">
+        function refreshIframes() {
+            var iframes = document.getElementsByTagName('iframe');
+            for (var i = 0; i < iframes.length; i++) {
+                iframes[i].src = iframes[i].src;
+            }
+        }
+        setInterval(refreshIframes, 30000); // Refresh every 1000 milliseconds (1 second)
+    </script>
+</head>
+<body>
+    <h1>累計収益</h1>
+    <p>三十秒ごとにデータがアップデートされます。</p>
+    <ol>
+        <li>Long、Shortの順番に表示しています。</li>
+        <li>マウスカーソルをグラフ上に運ぶことによって額の推移を確認できます。</li>
+        <li>x座標は日付、y座標は額の累計となっています（円）。
+    </ol>
+    <h1> Directionごとの累計収益</h1>
+    <div class="iframe-container">
+        <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vR4Nh5thkk8hTR_nk6uYMJT3lS8e9vnjLWtnh8Kqb0TF-Gw8Hc47YsvZ_AwMeki2VZnRPpS-UOyA23-/pubchart?oid=694336407&amp;format=interactive"></iframe>
+        <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vR4Nh5thkk8hTR_nk6uYMJT3lS8e9vnjLWtnh8Kqb0TF-Gw8Hc47YsvZ_AwMeki2VZnRPpS-UOyA23-/pubchart?oid=692200314&amp;format=interactive"></iframe>
+    </div>  
+    <p>
+    </p>  
+    <h1> 総合累計収益</h1>
+    <div class="iframe2-container">
+        <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vR4Nh5thkk8hTR_nk6uYMJT3lS8e9vnjLWtnh8Kqb0TF-Gw8Hc47YsvZ_AwMeki2VZnRPpS-UOyA23-/pubchart?oid=1879464968&amp;format=interactive"></iframe>
+         
+    </div>  
+    <p>
+
+
+
+</body>
+</html>
